@@ -25,22 +25,16 @@
   animation: intro-reveal 1.4s ease 0.2s forwards;
 }
 
-.intro-identity::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: -3.5rem;
-  left: 50%;
-  width: 15rem;
-  height: 10rem;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgb(154 163 199 / 8%) 0%, transparent 68%);
-  pointer-events: none;
-}
-
 .intro-identity:hover {
   color: var(--fg);
+}
+
+.intro-trigger {
+  cursor: pointer;
+}
+
+.intro-trigger:focus-visible {
+  outline: none;
 }
 
 .intro-signet {
@@ -77,6 +71,73 @@
   text-transform: lowercase;
 }
 
+.intro-navigation {
+  position: absolute;
+  top: calc(100% + 2.75rem);
+  left: 50%;
+  width: max-content;
+  color: var(--accent);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -0.65rem);
+  pointer-events: none;
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease,
+    visibility 0s linear 700ms;
+}
+
+.intro-navigation ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.4rem, 4vw, 3.25rem);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.intro-navigation li {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.4rem, 4vw, 3.25rem);
+  opacity: 0;
+  transform: translateY(0.45rem);
+  transition:
+    opacity 500ms ease calc(120ms + var(--item-index) * 90ms),
+    transform 500ms ease calc(120ms + var(--item-index) * 90ms);
+}
+
+.intro-navigation li:not(:last-child)::after {
+  content: "";
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+.intro-navigation span {
+  font-family: var(--font-mono);
+  font-size: clamp(0.62rem, 0.85vw, 0.7rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: lowercase;
+}
+
+.intro-identity.is-open .intro-navigation {
+  opacity: 0.82;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.intro-identity.is-open .intro-navigation li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .splash-cursor {
   position: fixed;
   inset: 0;
@@ -104,5 +165,10 @@
     opacity: 1;
     transform: none;
     animation: none;
+  }
+
+  .intro-navigation,
+  .intro-navigation li {
+    transition: none;
   }
 }
