@@ -14,15 +14,29 @@
 
 .intro-identity {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.35rem;
   color: var(--fg);
   opacity: 0;
   transform: translateY(6px);
   animation: intro-reveal 1.4s ease 0.2s forwards;
+}
+
+.intro-identity::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -3.5rem;
+  left: 50%;
+  width: 15rem;
+  height: 10rem;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(154 163 199 / 8%) 0%, transparent 68%);
+  pointer-events: none;
 }
 
 .intro-identity:hover {
@@ -32,6 +46,13 @@
 .intro-signet {
   width: clamp(5.5rem, 10vw, 8rem);
   height: auto;
+  filter: drop-shadow(0 0 0.8rem rgb(154 163 199 / 12%));
+}
+
+.intro-copy {
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
 }
 
 .intro-wordmark {
@@ -43,6 +64,17 @@
   letter-spacing: 0.22em;
   text-transform: lowercase;
   margin: 0;
+}
+
+.intro-slogan {
+  margin: 0;
+  color: rgb(154 163 199 / 82%);
+  font-family: var(--font-mono);
+  font-size: clamp(0.62rem, 0.8vw, 0.68rem);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.18em;
+  text-transform: lowercase;
 }
 
 .splash-cursor {

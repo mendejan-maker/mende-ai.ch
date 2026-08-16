@@ -2,9 +2,10 @@
 
 const SIGNET_SVG = `
 <svg viewBox="0 0 40 24" role="img" aria-hidden="true">
-  <line x1="2" y1="12" x2="16" y2="12" stroke="#9AA3C7" stroke-width="1"></line>
-  <circle cx="20" cy="12" r="2.5" fill="#9AA3C7"></circle>
-  <line x1="24" y1="12" x2="38" y2="12" stroke="#9AA3C7" stroke-width="1"></line>
+  <line x1="2" y1="12" x2="16" y2="12" stroke="#9AA3C7" stroke-width="0.9" stroke-linecap="round" stroke-opacity="0.72"></line>
+  <circle cx="20" cy="12" r="4.25" fill="none" stroke="#9AA3C7" stroke-width="0.55" stroke-opacity="0.2"></circle>
+  <circle cx="20" cy="12" r="2.35" fill="#AEB6D6"></circle>
+  <line x1="24" y1="12" x2="38" y2="12" stroke="#9AA3C7" stroke-width="0.9" stroke-linecap="round" stroke-opacity="0.72"></line>
 </svg>
 `;
 
