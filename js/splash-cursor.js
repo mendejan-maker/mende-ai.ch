@@ -6,13 +6,13 @@
   const config = {
     simResolution: 128,
     dyeResolution: 1440,
-    densityDissipation: 3,
+    densityDissipation: 6,
     velocityDissipation: 4,
     pressure: 0.15,
     pressureIterations: 20,
     curl: 3,
     splatRadius: 0.2,
-    splatForce: 4500,
+    splatForce: 1800,
     shading: true,
     colorUpdateSpeed: 9,
     rainbowMode: false,
@@ -710,6 +710,12 @@
     moved: false,
     color: logoColor(),
   };
+  const interactionSelector =
+    "a, button, input, select, textarea, [role='button'], [tabindex], .intro-navigation";
+
+  function isInteractionTarget(target) {
+    return target instanceof Element && Boolean(target.closest(interactionSelector));
+  }
 
   function updatePointer(clientX, clientY) {
     const pixelRatio = window.devicePixelRatio || 1;
@@ -732,6 +738,13 @@
     pointer.moved = pointer.x !== pointer.previousX || pointer.y !== pointer.previousY;
   }
 
+  function parkPointer(clientX, clientY) {
+    updatePointer(clientX, clientY);
+    pointer.previousX = pointer.x;
+    pointer.previousY = pointer.y;
+    pointer.moved = false;
+  }
+
   function applyPointer() {
     if (!pointer.moved) return;
     pointer.moved = false;
@@ -750,10 +763,20 @@
   }
 
   function handleMouseMove(event) {
+    if (isInteractionTarget(event.target)) {
+      parkPointer(event.clientX, event.clientY);
+      return;
+    }
+
     updatePointer(event.clientX, event.clientY);
   }
 
   function handleMouseDown(event) {
+    if (isInteractionTarget(event.target)) {
+      parkPointer(event.clientX, event.clientY);
+      return;
+    }
+
     updatePointer(event.clientX, event.clientY);
     const clickColor = logoColor();
     splash(
@@ -767,12 +790,26 @@
 
   function handleTouchStart(event) {
     const touch = event.targetTouches[0];
-    if (touch) updatePointer(touch.clientX, touch.clientY);
+    if (!touch) return;
+
+    if (isInteractionTarget(event.target)) {
+      parkPointer(touch.clientX, touch.clientY);
+      return;
+    }
+
+    updatePointer(touch.clientX, touch.clientY);
   }
 
   function handleTouchMove(event) {
     const touch = event.targetTouches[0];
-    if (touch) updatePointer(touch.clientX, touch.clientY);
+    if (!touch) return;
+
+    if (isInteractionTarget(event.target)) {
+      parkPointer(touch.clientX, touch.clientY);
+      return;
+    }
+
+    updatePointer(touch.clientX, touch.clientY);
   }
 
   let previousTime = performance.now();
