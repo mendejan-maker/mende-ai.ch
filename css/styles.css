@@ -1,0 +1,455 @@
+/* Zero Engineering AG — gemeinsames Stylesheet */
+
+:root {
+  --bg: #0B0C10;
+  --surface: #111319;
+  --line: #22252C;
+  --fg: #E7E6E2;
+  --muted: #6E7180;
+  --accent: #9AA3C7;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --content-width: 46rem;
+  --gutter: 1.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.25;
+  margin: 0 0 1rem;
+  color: var(--fg);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-style: normal;
+}
+
+p {
+  margin: 0 0 1.25rem;
+  color: var(--fg);
+}
+
+p.lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 38rem;
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+/* Layout */
+
+.wrap {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+main {
+  display: block;
+}
+
+section {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+/* Header */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .wrap {
+  max-width: 64rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--fg);
+}
+
+.wordmark:hover {
+  color: var(--fg);
+}
+
+.signet {
+  width: 28px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.signet-small {
+  width: 22px;
+}
+
+nav.site-nav ul {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+nav.site-nav a {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+nav.site-nav a:hover,
+nav.site-nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+/* Hero */
+
+.hero {
+  padding: 6rem 0 5rem;
+}
+
+.hero .wrap {
+  max-width: 64rem;
+}
+
+.hero h1 {
+  max-width: 34rem;
+}
+
+/* Index links list */
+
+.section-links ul,
+.services-list ul,
+.form-note {
+  border-top: 1px solid var(--line);
+}
+
+.section-links li,
+.services-list li {
+  border-bottom: 1px solid var(--line);
+  padding: 2rem 0;
+}
+
+.section-links a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.section-links a .link-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--fg);
+}
+
+.section-links a .link-arrow {
+  font-family: var(--font-mono);
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.section-links a:hover .link-title,
+.section-links a:hover .link-arrow {
+  color: var(--accent);
+}
+
+.section-links p {
+  color: var(--muted);
+  margin-top: 0.5rem;
+  max-width: 32rem;
+}
+
+/* Services list (Leistungen) */
+
+.services-list h3 {
+  margin-bottom: 0.75rem;
+}
+
+.services-list .service-index {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.services-list p {
+  color: var(--muted);
+  max-width: 36rem;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg);
+  background: transparent;
+  border: 1px solid var(--accent);
+  padding: 0.85rem 1.6rem;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover {
+  color: var(--accent);
+  border-color: var(--fg);
+}
+
+/* Forms */
+
+.contact-form {
+  border-top: 1px solid var(--line);
+  padding-top: 2.5rem;
+}
+
+.field {
+  margin-bottom: 1.75rem;
+}
+
+.field label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1rem;
+  padding: 0.85rem 1rem;
+  line-height: 1.6;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 9rem;
+}
+
+.contact-direct {
+  color: var(--muted);
+}
+
+.contact-direct a {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+}
+
+/* Philosophy / narrative text (Über uns) */
+
+.prose p {
+  max-width: 40rem;
+}
+
+.prose .pull {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--fg);
+  max-width: 34rem;
+  margin: 2.5rem 0;
+  line-height: 1.5;
+}
+
+/* Footer */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 3rem 0;
+}
+
+.site-footer .wrap {
+  max-width: 64rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+}
+
+.footer-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-meta a {
+  color: var(--muted);
+}
+
+.footer-meta a:hover {
+  color: var(--accent);
+}
+
+/* Fade-in on scroll */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+  section {
+    padding: 3.5rem 0;
+  }
+
+  .hero {
+    padding: 4rem 0 3rem;
+  }
+
+  .site-header .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  nav.site-nav ul {
+    gap: 1.25rem;
+  }
+
+  .section-links a {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .site-footer .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kontaktieren Sie mende-ai für ein erstes Gespräch zu Ihrer Ausgangslage und sinnvollen KI-Anwendungen.">
+  <meta name="theme-color" content="#0B0C10">
+  <meta property="og:title" content="Kontakt — mende-ai">
+  <meta property="og:description" content="Ein erstes, ruhiges Gespräch über Ihre Ausgangslage.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mende-ai.ch/kontakt.html">
+  <title>Kontakt — mende-ai</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;1,300&family=Work+Sans:wght@300;400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <section class="hero fade-in" aria-labelledby="hero-title">
+      <div class="wrap">
+        <span class="eyebrow">Kontakt</span>
+        <h1 id="hero-title">Ein ruhiges Gespräch ist ein guter Anfang.</h1>
+        <p class="lead">Erzählen Sie uns, was Sie beschäftigt. Wir hören zu, ordnen ein und finden gemeinsam heraus, ob und wie KI sinnvoll unterstützen kann.</p>
+      </div>
+    </section>
+
+    <section class="fade-in" aria-labelledby="kontakt-title">
+      <div class="wrap">
+        <span class="eyebrow">Nachricht</span>
+        <h2 id="kontakt-title">Worum geht es Ihnen?</h2>
+        <p class="contact-direct">Direkt per E-Mail: <a href="mailto:kontakt@mende-ai.ch">kontakt@mende-ai.ch</a></p>
+
+        <form class="contact-form" action="mailto:kontakt@mende-ai.ch" method="post" enctype="text/plain">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">E-Mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="organisation">Organisation <span aria-hidden="true">(optional)</span></label>
+            <input id="organisation" name="organisation" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="message">Ihre Nachricht</label>
+            <textarea id="message" name="nachricht" required></textarea>
+          </div>
+          <button class="btn" type="submit">Nachricht vorbereiten</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>
