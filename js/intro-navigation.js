@@ -7,7 +7,7 @@ if (introIdentity && introTrigger) {
     introTrigger.setAttribute("aria-expanded", String(isOpen));
     introTrigger.setAttribute(
       "aria-label",
-      isOpen ? "Navigation ausblenden" : "Navigation anzeigen"
+      isOpen ? "Kontakt ausblenden" : "Kontakt anzeigen"
     );
   }
 

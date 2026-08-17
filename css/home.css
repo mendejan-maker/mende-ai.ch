@@ -107,6 +107,10 @@
     transform 500ms ease calc(120ms + var(--item-index) * 90ms);
 }
 
+.intro-navigation li[hidden] {
+  display: none;
+}
+
 .intro-navigation li:not(:last-child)::after {
   content: "";
   width: 2px;
@@ -123,6 +127,28 @@
   line-height: 1;
   letter-spacing: 0.18em;
   text-transform: lowercase;
+}
+
+.intro-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--accent);
+}
+
+.intro-contact-separator {
+  opacity: 0.4;
+}
+
+.intro-contact-email {
+  color: rgb(231 230 226 / 72%);
+  letter-spacing: 0.1em;
+  transition: color 200ms ease;
+}
+
+.intro-contact-link:hover .intro-contact-email,
+.intro-contact-link:focus-visible .intro-contact-email {
+  color: var(--accent);
 }
 
 .intro-identity.is-open .intro-navigation {

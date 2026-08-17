@@ -13,24 +13,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;1,300&family=Work+Sans:wght@300;400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/home.css?v=20260816-1">
+  <link rel="stylesheet" href="css/home.css?v=20260817-1">
   <script src="js/splash-cursor.js?v=20260816-1" defer></script>
-  <script src="js/intro-navigation.js?v=20260816-1" defer></script>
+  <script src="js/intro-navigation.js?v=20260817-1" defer></script>
 </head>
 <body class="home">
   <main>
     <section class="intro-gate" aria-label="mende-ai">
       <div class="intro-identity">
-        <img class="intro-signet intro-trigger" src="assets/logo.svg" alt="" role="button" tabindex="0" aria-label="Navigation anzeigen" aria-expanded="false" aria-controls="intro-navigation" draggable="false">
+        <img class="intro-signet intro-trigger" src="assets/logo.svg" alt="" role="button" tabindex="0" aria-label="Kontakt anzeigen" aria-expanded="false" aria-controls="intro-navigation" draggable="false">
         <div class="intro-copy">
           <h1 class="intro-wordmark">mende-ai</h1>
           <p class="intro-slogan">independent ai systems</p>
         </div>
-        <nav class="intro-navigation" id="intro-navigation" aria-label="Hauptnavigation">
+        <nav class="intro-navigation" id="intro-navigation" aria-label="Kontakt">
           <ul>
-            <li style="--item-index: 0"><span>systems</span></li>
-            <li style="--item-index: 1"><span>approach</span></li>
-            <li style="--item-index: 2"><span>contact</span></li>
+            <!-- Remove `hidden` to make these reserved entries visible again. -->
+            <li hidden style="--item-index: 0"><span>systems</span></li>
+            <li hidden style="--item-index: 1"><span>approach</span></li>
+            <li class="intro-contact" style="--item-index: 2">
+              <a class="intro-contact-link" href="mailto:mende@mende-ai.ch">
+                <span>contact</span>
+                <span class="intro-contact-separator" aria-hidden="true">·</span>
+                <span class="intro-contact-email">mende@mende-ai.ch</span>
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
