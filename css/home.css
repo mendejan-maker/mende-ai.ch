@@ -132,12 +132,7 @@
 .intro-contact-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
   color: var(--accent);
-}
-
-.intro-contact-separator {
-  opacity: 0.4;
 }
 
 .intro-contact-email {
