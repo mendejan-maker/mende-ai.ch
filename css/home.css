@@ -13,6 +13,8 @@
 }
 
 .intro-identity {
+  --intro-line-gap: 0.7rem;
+
   position: relative;
   z-index: 4;
   display: flex;
@@ -46,7 +48,7 @@
 .intro-copy {
   display: grid;
   justify-items: center;
-  gap: 0.7rem;
+  gap: var(--intro-line-gap);
 }
 
 .intro-wordmark {
@@ -66,14 +68,14 @@
   font-family: var(--font-mono);
   font-size: clamp(0.62rem, 0.8vw, 0.68rem);
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1;
   letter-spacing: 0.18em;
   text-transform: lowercase;
 }
 
 .intro-navigation {
   position: absolute;
-  top: calc(100% + 2.75rem);
+  top: calc(100% + var(--intro-line-gap));
   left: 50%;
   width: max-content;
   color: var(--accent);
